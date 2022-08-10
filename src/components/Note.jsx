@@ -1,12 +1,14 @@
 import React from "react";
+import { DeleteNote } from "./App";
 
-function Note () {
+export default function Note (note) {
     return (
         <div className="note">
-            <h1>Title</h1>
-            <p>Content</p>
+            <h1>{note.title}</h1>
+            <p>{note.content}</p>
+            <button onClick={() => {
+                DeleteNote(note)
+            }}>DELETE</button>
         </div>
     );
-};
-
-export default Note;
+}
